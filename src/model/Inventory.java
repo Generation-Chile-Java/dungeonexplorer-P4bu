@@ -43,7 +43,7 @@ public class Inventory {
         } else {
             System.out.println("Contenido Mochila");
             for(Object object : objects){
-                System.out.println("*" + object.getNameObject() + "=> " + object.getDescriptionObject());
+                System.out.println("* " + object.getNameObject() + "=> " + object.getDescriptionObject());
             }
         }
 

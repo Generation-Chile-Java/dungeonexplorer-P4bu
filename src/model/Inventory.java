@@ -23,7 +23,7 @@ public class Inventory {
             Item obj = iterator.next();
             if (obj.equals(item)) {
                 iterator.remove();
-                System.out.println("Queee!. Dejaste " + item.getNameObject() + " de tu mochila.");
+                System.out.println("Dejaste " + item.getNameObject() + " de tu mochila.");
                 return;
             }
         }

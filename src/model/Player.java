@@ -2,7 +2,7 @@ package model;
 
 public class Player {
     private String name;
-    private Integer health;
+    private Integer health = 100;
     private Inventory inventory;
 
     public Player() {

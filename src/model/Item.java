@@ -2,17 +2,17 @@ package model;
 
 import interfaces.GameObject;
 
-public class Object implements GameObject {
+public class Item implements GameObject {
     private String nameObject;
     private String descriptionObject;
     private int quantityUse;
     private Boolean isUseObject;
     private Boolean isEquippedObject;
 
-    public Object() {
+    public Item() {
     }
 
-    public Object(String nameObject, String descriptionObject, int quantityUse, Boolean isUseObject, Boolean isEquippedObject) {
+    public Item(String nameObject, String descriptionObject, int quantityUse, Boolean isUseObject, Boolean isEquippedObject) {
         this.nameObject = nameObject;
         this.descriptionObject = descriptionObject;
         this.quantityUse = quantityUse;

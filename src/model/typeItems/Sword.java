@@ -1,9 +1,9 @@
 package model.typeItems;
 
 import model.Inventory;
-import model.Object;
+import model.Item;
 
-public class Sword extends Object {
+public class Sword extends Item {
     static final int DAMAGE = 10;
 
     public Sword() {

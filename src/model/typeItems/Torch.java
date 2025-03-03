@@ -1,9 +1,9 @@
 package model.typeItems;
 
 import model.Inventory;
-import model.Object;
+import model.Item;
 
-public class Torch extends Object {
+public class Torch extends Item {
     private boolean lit;
 
     public Torch() {

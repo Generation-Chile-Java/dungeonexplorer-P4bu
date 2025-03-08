@@ -60,7 +60,7 @@ public class Main {
         Room sala = null;
 
         while(true) {
-            System.out.println("\nIntroduce un movimiento:");
+            System.out.println("\nIntroduce un movimiento: ");
             System.out.println("Derecha | Izquierda | Salir");
             String move = sc.nextLine().toLowerCase();
 

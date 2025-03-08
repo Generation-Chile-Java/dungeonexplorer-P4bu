@@ -54,12 +54,13 @@ public class Main {
 
 
         // Prueba de salas aleatorias.
-        int salaId = 1;
+        int roomId = 0;
         Random random = new Random();
-        int numeroRandom = random.nextInt(3);
-        Room sala = null;
+        Room room = null;
+        System.out.println("\nEstas en una habitacion vacia");
 
         while(true) {
+            int numeroRandom = random.nextInt(3);
             System.out.println("\nIntroduce un movimiento: ");
             System.out.println("Derecha | Izquierda | Salir");
             String move = sc.nextLine().toLowerCase();
@@ -71,18 +72,17 @@ public class Main {
 
            switch (numeroRandom) {
                case 0:
-                   sala = new EmptyRoom(salaId);
+                   room = new EmptyRoom(roomId);
                    break;
                case 1:
-                   sala = new TreasureRoom(salaId);
+                   room = new TreasureRoom(roomId, espada);
                    break;
                case 2:
-                   sala = new EnemyRoom(salaId);
+                   room = new EnemyRoom(roomId, antorcha);
                    break;
            }
             System.out.println("Avanzaste a la " + move + " y entraste a una sala nueva: ");
-            sala.enter();
-            salaId++;
+            room.enter();
         }
 
 

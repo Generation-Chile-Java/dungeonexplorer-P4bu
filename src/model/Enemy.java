@@ -1,9 +1,14 @@
 package model;
 
-public class Enemy {
+import java.util.Random;
+
+public abstract class Enemy {
+    private static final Random random = new Random();
+
     private String nameEnemy;
     private String descriptionEnemy;
-    private Integer healthEnemy;
+    private Integer healthEnemy = 100;
+    private int enemyId;
 
     public Enemy() {
     }
@@ -12,6 +17,13 @@ public class Enemy {
         this.nameEnemy = nameEnemy;
         this.descriptionEnemy = descriptionEnemy;
         this.healthEnemy = healthEnemy;
+    }
+
+    public Enemy(String nameEnemy, String descriptionEnemy, Integer healthEnemy, int enemyId) {
+        this.nameEnemy = nameEnemy;
+        this.descriptionEnemy = descriptionEnemy;
+        this.healthEnemy = healthEnemy;
+        this.enemyId = enemyId;
     }
 
     public String getNameEnemy() {
@@ -38,7 +50,20 @@ public class Enemy {
         this.healthEnemy = healthEnemy;
     }
 
+    public int getEnemyId() {
+        return enemyId;
+    }
+
+    public void setEnemyId(int enemyId) {
+        this.enemyId = enemyId;
+    }
+
     //TODO: Crear metodos Enemigo
-    //TODO: Implementar GameObject
+    public abstract void attack(Player player);
+
+    public void takeDamage(int damage) {
+        this.healthEnemy -= damage;
+        System.out.println(nameEnemy + " ha recibido " + damage + " de daño. Vida restante: " + healthEnemy);
+    }
 
 }

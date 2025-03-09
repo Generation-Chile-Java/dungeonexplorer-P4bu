@@ -1,9 +1,12 @@
 package model;
 
+import model.typeItems.Sword;
+
 public class Player {
     private String name;
     private Integer health = 100;
     private Inventory inventory;
+    private Sword sword;
 
     public Player() {
     }
@@ -45,6 +48,11 @@ public class Player {
 
     //TODO: Crear metodos para Player
     //TODO: Implementar GameObject
+
+    public void attackPlayer(Enemy enemy) {
+        enemy.setHealthEnemy((enemy.getHealthEnemy() - 5));
+        System.out.println("la vida del enemigo es " + enemy.getHealthEnemy());
+    }
 
 
 }

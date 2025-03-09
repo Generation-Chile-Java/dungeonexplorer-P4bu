@@ -1,7 +1,9 @@
 import interfaces.Room;
+import model.Enemy;
 import model.Inventory;
 import model.Item;
 import model.Player;
+import model.enemys.Worm;
 import model.rooms.EmptyRoom;
 import model.rooms.EnemyRoom;
 import model.rooms.TreasureRoom;
@@ -12,9 +14,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+    static Player player = new Player();
     public static void main(String[] args) {
         Inventory inventory = new Inventory();
-        Player player = new Player();
+
 
         Item antorcha = new Torch();
         Item espada = new Sword();
@@ -57,6 +60,7 @@ public class Main {
         int roomId = 0;
         Random random = new Random();
         Room room = null;
+        Enemy worm = new Worm();
         System.out.println("\nEstas en una habitacion vacia");
 
         while(true) {
@@ -78,11 +82,14 @@ public class Main {
                    room = new TreasureRoom(roomId, espada);
                    break;
                case 2:
-                   room = new EnemyRoom(roomId, antorcha);
+                   room = new EnemyRoom(roomId, espada, worm);
+                   //System.out.println(worm.getDescriptionEnemy());
+                   worm.attack(player);
                    break;
            }
             System.out.println("Avanzaste a la " + move + " y entraste a una sala nueva: ");
             room.enter();
+
         }
 
 
